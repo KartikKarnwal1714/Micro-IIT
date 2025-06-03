@@ -1,54 +1,77 @@
 body {
-    margin: 0;
-    height: 100vh;
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+.game-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    display: inline-block;
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.score-board {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000;
-    font-family: 'Segoe UI', sans-serif;
-  }
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #555;
+}
 
-  .calculator {
-    background: #111;
-    border-radius: 15px;
-    box-shadow: 0 0 20px #0ff;
-    padding: 20px;
-    width: 320px;
-  }
+.score-board div {
+    margin: 0 10px;
+    font-weight: bold;
+}
 
-  .display {
-    background: #000;
-    color: #0f0;
-    font-size: 2rem;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: right;
-    margin-bottom: 20px;
-    border: 2px solid #0f0;
-  }
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
 
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-
-  button {
-    padding: 20px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 10px;
+.choice {
     cursor: pointer;
-    transition: 0.2s;
-    color: #fff;
-  }
+    transition: transform 0.3s;
+}
 
-  .btn-operator { background-color: #ff5722; }
-  .btn-number { background-color: #2196f3; }
-  .btn-clear { background-color: #e91e63; }
-  .btn-equal { background-color: #4caf50; }
+.choice img {
+    width: 100px;
+    height: 100px;
+}
 
-  button:hover {
-    opacity: 0.8;
-    transform: scale(1.05);
-  }
+.choice p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #444;
+}
+
+.choice:hover {
+    transform: scale(1.1);
+}
+
+.result {
+    margin-top: 20px;
+}
+
+#winner {
+    margin-top: 20px;
+    font-size: 1.8em;
+    color: #222;
+}
